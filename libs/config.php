@@ -6,7 +6,7 @@
 
 
 //constante de la direccion completa
-define("URL","http://".$_SERVER['HTTP_HOST']."/app-web/");
+define("URL","http://".$_SERVER['HTTP_HOST']."/app-tijuana/");
 
 
 //constantes que definiran los campos para ingresar a la BD

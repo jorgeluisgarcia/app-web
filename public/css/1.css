@@ -303,3 +303,39 @@ span.sIFR-alternate {
 }
 
 
+div.formulario{
+	width:250px;
+	padding:20px;
+	border:5px solid #6CCC26;
+	margin:0px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.enviar{
+   font-size:10px;
+   font-family:Verdana,Helvetica;
+   font-weight:bold;
+   color:white;
+   background:#6CCC26;
+   border:0px;
+   width:80px;
+   height:30px;
+}
+
+.enviar2 {
+	text-decoration:none;
+   font-size:10px;
+   font-family:Verdana,Helvetica;
+   font-weight:bold;
+   color:white;
+   background:#6CCC26;
+   border:0px;
+   width:80px;
+   height:30px;
+}
+
+a.env{
+	text-decoration:none;
+	color:white;
+}

@@ -7,7 +7,9 @@ if(session::get("ingresado")==true){
 <h1>Bienvenido al Sistema</h1>
 Has ingresado como Administrador
 <br><br>
- <a class="submit2" href="<?php echo URL; ?>administrador">Cuenta</a>
+ <div class="enviar2">
+ <a class="env" href="<?php echo URL; ?>administrador">Cuenta</a>
+ </div>
 </center>
 <?php }elseif ($tipo=="user"){
 ?>
@@ -15,7 +17,9 @@ Has ingresado como Administrador
 <h1>Bienvenido al Sistema</h1>
 Has ingresado como usuario
 <br><br>
- <a class="submit2" href="<?php echo URL; ?>usuario">Cuenta</a>
+ <div class="enviar2">
+ <a class="env" href="<?php echo URL; ?>usuario">Cuenta</a>
+ </div>
 </center>
 <?php 
 }
@@ -25,6 +29,8 @@ Has ingresado como usuario
 <h1>Bienvenido al Sistema</h1>
 Aun no ingresas da click aqui
 <br><br>
- <a class="submit2" href="<?php echo URL; ?>ingresar">Ingresar</a>
+<div class="enviar2">
+ <a class="env" href="<?php echo URL; ?>ingresar">Ingresar</a>
+ </div>
 </center>
 <?php } ?>
