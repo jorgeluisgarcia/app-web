@@ -1,4 +1,5 @@
 <?php 
+session::init();
 if(session::get("ingresado")==true){
 	$tipo=session::get("tipo");
 	if($tipo=="admin"){
@@ -11,7 +12,7 @@ Has ingresado como Administrador
  <a class="env" href="<?php echo URL; ?>administrador">Cuenta</a>
  </div>
 </center>
-<?php }elseif ($tipo=="user"){
+<?php }elseif ($tipo=="usuario"){
 ?>
 <center>
 <h1>Bienvenido al Sistema</h1>

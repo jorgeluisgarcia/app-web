@@ -6,7 +6,7 @@ class usuario extends controller{
 		session::init();
 		$ingresado=session::get("ingresado");
 		$tipo=session::get("tipo");
-		if($ingresado==true && $tipo=="user"){
+		if($ingresado==true && $tipo=="usuario"){
 			//si entra 
 		}else{
 			//no entra

@@ -1,6 +1,6 @@
 <br>
 <div class="formulario">
-<form id="inicio" action="<?php echo URL; ?>ingresar/correr" method="post">
+<form id="inicio" action="<?php echo URL; ?>ingresar/ingresar" method="post">
          <h1>Ingresar!!!</h1>
          <p>
             <label for="name">Nombre</label><br>

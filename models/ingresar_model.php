@@ -6,7 +6,7 @@ class ingresar_model extends modelo{
 		parent::__construct();
 	}
 	
-	function run() {
+	function ingresar() {
 		
 
 		$declaracion=$this->db->prepare("SELECT id_usuarios,nombre,tipo FROM usuarios 
@@ -19,6 +19,7 @@ class ingresar_model extends modelo{
 		$data=$declaracion->fetchAll();
 		$conteo=$declaracion->rowCount();
 		print_r($data);
+		
 		$tipo=$data[0][2];
 		$nombre=$data[0][1];
 		$id=$data[0][0];
@@ -31,7 +32,7 @@ class ingresar_model extends modelo{
 			session::set("tipo",$tipo);
 			session::set("nombre",$nombre);
 			session::set("id",$id);
-			if($tipo=="user"){
+			if($tipo=="usuario"){
 				header("location: ".URL."usuario");
 			}else{
 				header("location: ".URL."administrador");

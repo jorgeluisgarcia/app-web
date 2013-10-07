@@ -10,8 +10,8 @@ class ingresar extends controller {
 		
 	}
 	
-	function correr() {
-		$this->modelo->run();
+	function ingresar() {
+		$this->modelo->ingresar();
 	}
 	
 }
