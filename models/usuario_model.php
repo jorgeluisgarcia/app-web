@@ -5,5 +5,9 @@ class usuario_model extends modelo{
 		parent::__construct();
 	}
 	
+	function registrar(){
+		return "Hola";
+	}
+	
 }
 ?>

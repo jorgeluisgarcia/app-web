@@ -3,6 +3,7 @@
 class controller {
 	function __construct() {
 		$this->vista=new view();
+		
 	}
 	
 	function cargarModelo($nombre) {

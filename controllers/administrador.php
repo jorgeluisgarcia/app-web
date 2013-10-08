@@ -16,8 +16,14 @@ class administrador extends controller{
 		}
 	}
 	
-	function index() {
-		$this->vista->render("administrador/index");
+	function index($metodo=null) {
+	if($metodo==null){
+			$this->vista->render("administrador/index",true);
+		}else{
+			$this->vista->render("administrador/index",false);
+			$this->$metodo();
+			require "views/footer.php"; 
+		}
 		
 	}
 	

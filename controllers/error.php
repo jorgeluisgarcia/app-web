@@ -5,8 +5,14 @@ class error extends controller{
 		
 	}
 	
-	function index() {
-		$this->vista->render("error/index");
+	function index($metodo=null) {
+		if($metodo==null){
+			$this->vista->render("error/index",true);
+		}else{
+			$this->vista->render("error/index",false);
+			$this->$metodo();
+			require "views/footer.php";
+		}
 	
 	}
 }
