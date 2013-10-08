@@ -16,15 +16,25 @@ class usuario extends controller{
 		}
 	}
 	
-	function index() {
-		$this->vista->render("usuario/index");
-		
+	function index($metodo=null) {
+		if($metodo==null){
+			$this->vista->render("usuario/index",true);
+		}else{
+			$this->vista->render("usuario/index",false);
+			$this->$metodo();
+			require "views/footer.php";
+		}
 	}
 	
 	function salir() {
 		session::destroy();
 		header("location:".URL."ingresar");
 		exit();
+	}
+	
+	function registrar() {
+		$msg=$this->modelo->registrar();
+		echo $msg;
 	}
 }
 ?>
