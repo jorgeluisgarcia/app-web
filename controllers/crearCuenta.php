@@ -6,8 +6,14 @@ class crearCuenta extends controller {
 	
 	}
 	
-	function index() {
-		$this->vista->render("crearCuenta/index");
+	function index($metodo=null) {
+		if($metodo==null){
+			$this->vista->render("crearCuenta/index",true);
+		}else{
+			$this->vista->render("crearCuenta/index",false);
+			$this->$metodo();
+			require "views/footer.php";
+		}
 	}
 	
 	function crear() {

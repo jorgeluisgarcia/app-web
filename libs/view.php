@@ -3,13 +3,15 @@
 class view {
 
 	function __construct() {
+		
 	}
 	
-	function render($nombre) {
-		require 'views/Header.php';
+	function render($nombre,$footer=false) {
+		require "views/header.php";
 		require 'views/'.$nombre.'.php';
-		require 'views/Footer.php';
-		
+		if($footer=="true"){
+			require "views/footer.php";
+		}
 	}
 }
 

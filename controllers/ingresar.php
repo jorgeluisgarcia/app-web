@@ -5,8 +5,14 @@ class ingresar extends controller {
 		
 	}
 	
-	function index() {
-		$this->vista->render("ingresar/index");
+	function index($metodo=false) {
+		if($metodo==null){
+			$this->vista->render("ingresar/index",true);
+		}else{
+			$this->vista->render("ingresar/index",false);
+			$this->$metodo();
+			require "views/footer.php";
+		}
 		
 	}
 	
