@@ -54,7 +54,7 @@ class usuario extends controller{
 		</select><br>
 		
 		<label for='campo4'>Descripcion</label><br>
-		<textarea id='campo4' name='Descripcion'rows=5 cols=25 ></textarea><br>
+		<textarea id='campo4' name='descripcion' rows=5 cols=25 ></textarea><br>
 				
 		<input type='submit' value='Registrar' class='enviar'/>
 		
@@ -65,5 +65,10 @@ class usuario extends controller{
 	function registrar() {
 		$this->modelo->registrar();
 	}
+	
+	function lugares(){
+		$this->modelo->lugares();
+	}
+	
 }
 ?>
