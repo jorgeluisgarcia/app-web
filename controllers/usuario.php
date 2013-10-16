@@ -32,9 +32,43 @@ class usuario extends controller{
 		exit();
 	}
 	
-	function registrar() {
-		$msg=$this->modelo->registrar();
-		echo $msg;
+	function formulario() {
+		echo "
+		<div class='formulario'>
+		<form action='".URL."usuario/registrar' method='post'>
+		<h1>Crear Cuenta</h1>
+		
+		<label for='campo1'>Nombre</label><br>
+		<input type='text' id='campo1' name='nombre'/><br>
+		
+		
+		<label for='campo2'>Colonia</label><br>
+		<input type='text' id='campo2' name='colonia' /><br>
+		
+		<label for='campo3'>Tipo</label><br>
+		<select name='tipo' id='campo3'>
+  		<option value='Bar'>Bar</option> 
+  		<option value='Restaurante'>Restaurante</option>
+  		<option value='Evento'>Evento</option>
+		<option value='Otro'>Otro</option>
+		</select><br>
+		
+		<label for='campo4'>Descripcion</label><br>
+		<textarea id='campo4' name='descripcion' rows=5 cols=25 ></textarea><br>
+				
+		<input type='submit' value='Registrar' class='enviar'/>
+		
+		</form>
+		</div>";
 	}
+	
+	function registrar() {
+		$this->modelo->registrar();
+	}
+	
+	function lugares(){
+		$this->modelo->lugares();
+	}
+	
 }
 ?>

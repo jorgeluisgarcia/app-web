@@ -3,7 +3,10 @@
 
 </center>
 <div class="enviar">
-<a class="env" href="<?php echo URL?>usuario/registrar">->lugares</a>
+<a class="env" href="<?php echo URL?>usuario/formulario">->Registar</a>
 </div>
 
+<div class="enviar">
+<a class="env" href="<?php echo URL?>usuario/lugares">->lugares</a>
+</div>
 
