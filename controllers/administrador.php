@@ -16,15 +16,18 @@ class administrador extends controller{
 		}
 	}
 	
-	function index($metodo=null) {
-	if($metodo==null){
+function index($metodo=null,$parametro=null) {
+		if($metodo==null){
 			$this->vista->render("administrador/index",true);
 		}else{
 			$this->vista->render("administrador/index",false);
-			$this->$metodo();
-			require "views/footer.php"; 
+			if($parametro!=null){
+				$this->$metodo($parametro);
+			}else{
+				$this->$metodo();
+			}
+			require "views/footer.php";
 		}
-		
 	}
 	
 	function salir() {
@@ -32,5 +35,26 @@ class administrador extends controller{
 		header("location:".URL."ingresar");
 		exit();
 	}
+	
+	function usuarios() {
+		$this->modelo->usuarios();
+	}
+	
+	function registros() {
+		$this->modelo->registros();
+	}
+	
+	function ver($var) {
+		$this->modelo->ver($var);
+	}
+	
+	function eliminarU($param) {
+		$this->modelo->eliminarU($param);
+	}
+	
+	function eliminarR($param) {
+		$this->modelo->eliminarR($param);
+	}
+	
 }
 ?>
