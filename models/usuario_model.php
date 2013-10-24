@@ -36,11 +36,20 @@ class usuario_model extends modelo{
 			echo "<td>".$valor['colonia']."</td>";
 			echo "<td>".$valor['tipo']."</td>";
 			echo "<td>".$valor['descripcion']."</td>";
-			echo "<td>".$valor['corrdenadas']."</td>";
+			if($valor['corrdenadas']=="0000,0000"){
+				echo "<td><a href='".URL."mapa/cargarMapa/".$valor['id_registro']."'>Editar</a></td>";
+			}else{ 
+				$coords=explode(",",$valor['corrdenadas']);
+				//echo "<td>".$valor['corrdenadas']."</td>";
+				echo "<td>".$coords[0]."<br>".$coords[1]."<br>";
+				echo "<a href='".URL."mapa/cargarMapa/".$valor['id_registro']."'>Editar</a></td>";
+			}
 			echo "<tr>";
 		}
 		echo "</table>";
 	}
+	
+	
 	
 }
 ?>

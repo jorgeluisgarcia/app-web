@@ -13,6 +13,10 @@ class view {
 			require "views/footer.php";
 		}
 	}
+	
+	function render2($nombre) {
+		require 'views/'.$nombre.'.php';
+	}
 }
 
 ?>
