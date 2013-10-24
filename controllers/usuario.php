@@ -74,6 +74,11 @@ class usuario extends controller{
 		$this->modelo->lugares();
 	}
 	
+	function eliminar($var="none"){
+		$this->modelo->eliminar($var);
+		
+	}
+	
 	
 }
 ?>
