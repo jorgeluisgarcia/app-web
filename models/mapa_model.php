@@ -32,9 +32,15 @@ class mapa_model extends modelo{
 		//print_r($json);
 		//print_r($info['results'][0]['geometry']['location']);
 		//echo "</pre>";
-	
-		$lat=$info['results'][0]['geometry']['location']['lat'];
-		$lng=$info['results'][0]['geometry']['location']['lng'];
+		if($datos[0]['corrdenadas']=="0000,0000"){
+			$lat=$info['results'][0]['geometry']['location']['lat'];
+			$lng=$info['results'][0]['geometry']['location']['lng'];
+		}else{
+			$c=$datos[0]['corrdenadas'];
+			$cc=explode(",",$c);
+			$lat=$cc[0];
+			$lng=$cc[1];
+		}
 	
 		echo "<form method='post' action='".URL."mapa/cargarCoord/".$var."'>";
 		echo "<br>coordenadas actuales lat 
@@ -51,7 +57,7 @@ class mapa_model extends modelo{
 		echo "</form>
     	<div id=\"map_canvas\" style=\"width:50%; height:50%\"></div>";
 		
-		echo "<a href='".URL."usuario/lugares'>regresar</a>";
+		echo "<center><a href='".URL."usuario/lugares'>regresar</a><center>";
 	}
 	
 	function cargarCoord($var){
@@ -59,15 +65,15 @@ class mapa_model extends modelo{
 		$lng=$_POST["lng"];
 		
 		$Nvalor=$lat.",".$lng;
-		echo $Nvalor;
+		
 		$declaracion=$this->db->prepare("UPDATE `registros` SET `corrdenadas`=:Nvalor WHERE `id_registro`=:id");
 		$declaracion->execute(array(
 				':Nvalor'=>$Nvalor,
 				':id' => $var
 		))or die("no se pudo estraer informacion");
 		
-		echo "Se cargaron las coordenadas correctamente";
-		echo "<a href='".URL."usuario/lugares'>regresar</a>";
+		echo "<center>Se cargaron las coordenadas (".$Nvalor.") correctamente<br>";
+		echo "<a href='".URL."usuario/lugares'>regresar</a><center>";
 		
 	}
 }
