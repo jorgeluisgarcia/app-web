@@ -16,12 +16,16 @@ class usuario extends controller{
 		}
 	}
 	
-	function index($metodo=null) {
+	function index($metodo=null,$parametro=null) {
 		if($metodo==null){
 			$this->vista->render("usuario/index",true);
 		}else{
 			$this->vista->render("usuario/index",false);
-			$this->$metodo();
+			if($parametro!=null){
+				$this->$metodo($parametro);
+			}else{
+				$this->$metodo();
+			}
 			require "views/footer.php";
 		}
 	}
@@ -33,7 +37,7 @@ class usuario extends controller{
 	}
 	
 	function formulario() {
-		echo "
+		echo "<br><br>
 		<div class='formulario'>
 		<form action='".URL."usuario/registrar' method='post'>
 		<h1>Crear Cuenta</h1>
@@ -69,6 +73,7 @@ class usuario extends controller{
 	function lugares(){
 		$this->modelo->lugares();
 	}
+	
 	
 }
 ?>

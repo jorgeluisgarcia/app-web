@@ -32,7 +32,11 @@ class Bootstrap{
 
 		if(isset($url[1])){
 			if(method_exists($controlador,$url[1])){
-				$controlador->index($url[1]);
+				if(isset($url[2])){
+					$controlador->index($url[1],$url[2]);
+				}else{
+					$controlador->index($url[1]);
+				}
 			}else{
 				$this->llamarError();
 				return false;
